@@ -1,32 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Usuarios</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
 <body>
-    <p>Consumo de REST-API de Usuarios</p>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-users"></i> API de Usuarios</h1>
+            <p>Gestión completa de usuarios con REST API</p>
+        </header>
 
-    <div>
-        <label>Name </label>
-        <input type="text" id="name">
+        <section class="form-section">
+            <div class="form-group">
+                <label for="name"><i class="fas fa-user"></i> Nombre</label>
+                <input type="text" id="name">
+            </div>
+            <div class="form-group">
+                <label for="email"><i class="fas fa-envelope"></i> Email</label>
+                <input type="text" id="email">
+            </div>
+            <div class="form-group">
+                <label for="age"><i class="fas fa-birthday-cake"></i> Edad</label>
+                <input type="text" id="age">
+            </div>
+            <div class="form-group">
+                <label for="comments"><i class="fas fa-comment"></i> Comentarios</label>
+                <input type="text" id="comments">
+            </div>
+        </section>
+
+        <section class="actions">
+            <button onclick="postUser()"><i class="fas fa-plus-circle"></i> Crear Usuario</button>
+            <button onclick="getUsers()"><i class="fas fa-list"></i> Ver Todos</button>
+            <button id="btn-update" style="display:none;" onclick="updateUser()"><i class="fas fa-sync-alt"></i> Actualizar</button>
+        </section>
+
+        <section class="getbyid">
+            <h2><i class="fas fa-search"></i> Buscar Usuario por ID</h2>
+            <input type="text" id="id" placeholder="Introduce ID del usuario">
+            <button onclick="getByIdUser()"><i class="fas fa-search-location"></i> Buscar</button>
+        </section>
+
+        <section id="resultado"></section>
     </div>
-
-    <div>
-        <label>Email </label>
-        <input type="text" id="email">
-    </div>
-
-    <div>
-        <label>Age </label>
-        <input type="text" id="age">
-    </div>
-
-    <div>
-        <label>Comments </label>
-        <input type="text" id="comments">
-    </div>
-
-    <button onclick="postUser()"> POST user </button>
-    <button onclick="getUsers()"> GET usuarios </button>
-
-    <div id="resultado"></div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="callrestapi.js"></script>
