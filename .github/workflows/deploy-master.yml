@@ -18,7 +18,7 @@ jobs:
       - run: echo 'hello world'   
       - name: download, run httpd image
         run: |
-           docker run -d --name serving_base httpd
+           docker run -d --name serving_base httpd 
       - name: docker ps
         run: |
             docker ps
